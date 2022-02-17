@@ -18,19 +18,19 @@ class DownloadCaptions(Step):  # 1. 繼承 Step 抽象類別
     def process(self, data, inputs, utils):  # 2. 覆寫 抽象方法
         start = time.time()
         # 我寫的：優先讀取以下載的連結檔案 video_url.txt
-        yt_urls = open(os.path.join(VIDEOS_DIR, 'video_url.txt'), 'r', encoding='utf-8')
+        # yt_urls = open(os.path.join(VIDEOS_DIR, 'video_url.txt'), 'r', encoding='utf-8')
 
-        # for url in data:
-        for url in yt_urls:
+        for yt in data:
+        # for url in yt_urls:
 
             # print(url, end='')
             # print(utils.caption_file_exists(url))
 
-            if utils.caption_file_exists(url):
+            if utils.caption_file_exists(yt):
                 print('found existing caption file')
                 continue
 
-            video_id = url.split('watch?v=')[-1]
+            video_id = yt.url.split('watch?v=')[-1]
             # print(video_id, end='')
 
             try:
@@ -46,6 +46,8 @@ class DownloadCaptions(Step):  # 1. 繼承 Step 抽象類別
                 # continue
                 # raise StepException
         #
-        yt_urls.close()
+        # yt_urls.close()
+        # data.close()
         end = time.time()
         print('took', end - start, 'seconds')
+        return data
