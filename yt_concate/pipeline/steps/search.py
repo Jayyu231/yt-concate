@@ -1,6 +1,6 @@
 from .step import Step
 from yt_concate.model.found import Found
-
+from pprint import pprint
 
 class Search(Step):
     def process(self, data, inputs, utils):
@@ -19,5 +19,6 @@ class Search(Step):
                     found.append(f)
 
         print(len(found))
+        pprint(found)
         return found
 

@@ -21,3 +21,14 @@ class YT:
 
     def get_video_filepath(self):
         return os.path.join(VIDEOS_DIR, self.id + '.mp4')
+
+    def __str__(self):
+        return '<YT(' + self.id + ')>'
+
+    def __repr__(self):
+        content = ' : '.join([
+            'id=' + str(self.id),
+            'caption_filepath=' + str(self.caption_filepath),
+            'video_filepath=' + str(self.video_filepath)
+        ])
+        return '<YT(' + content + ')>'

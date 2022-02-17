@@ -23,7 +23,7 @@ def main():
         InitializeYT(),
         DownloadCaptions(),
         ReadCaption(),
-        # Search(),
+        Search(),
         Postflight(),
 
 
