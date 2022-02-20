@@ -21,10 +21,6 @@ class DownloadCaptions(Step):  # 1. 繼承 Step 抽象類別
         # yt_urls = open(os.path.join(VIDEOS_DIR, 'video_url.txt'), 'r', encoding='utf-8')
 
         for yt in data:
-        # for url in yt_urls:
-
-            # print(url, end='')
-            # print(utils.caption_file_exists(url))
 
             if utils.caption_file_exists(yt):
                 print('found existing caption file')

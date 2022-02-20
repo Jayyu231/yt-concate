@@ -9,6 +9,8 @@ from yt_concate.pipeline.steps.read_caption import ReadCaption
 from yt_concate.pipeline.steps.read_caption import ReadCaption
 from yt_concate.pipeline.steps.search import Search
 from yt_concate.pipeline.steps.initialize_yt import InitializeYT
+from yt_concate.pipeline.steps.download_videos import DownloadVideos
+
 CHANNEL_ID = 'UCKSVUHI9rbbkXhvAXK-2uxA'
 
 
@@ -24,6 +26,7 @@ def main():
         DownloadCaptions(),
         ReadCaption(),
         Search(),
+        DownloadVideos(),
         Postflight(),
 
 

@@ -2,6 +2,7 @@ from .step import Step
 from yt_concate.model.found import Found
 from pprint import pprint
 
+
 class Search(Step):
     def process(self, data, inputs, utils):
         search_word = inputs['search_word']
@@ -19,6 +20,6 @@ class Search(Step):
                     found.append(f)
 
         print(len(found))
-        pprint(found)
+        # pprint(found)
         return found
 
